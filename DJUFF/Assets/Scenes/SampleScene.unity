@@ -938,6 +938,7 @@ MonoBehaviour:
   pc: {fileID: 1415292513}
   rb: {fileID: 1024406457}
   body: 0
+  groundCheck: {fileID: 1024406458}
 --- !u!114 &1024406456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -955,6 +956,7 @@ MonoBehaviour:
   maxSpeed: 6
   accelRate: 8
   desaccelRate: 10
+  jumpForce: 200
 --- !u!54 &1024406457
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1150,6 +1152,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnJumpEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1024406456}
+        m_TargetAssemblyTypeName: BodyMovement, Assembly-CSharp
+        m_MethodName: Jump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1415292515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1288,6 +1305,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2898597b-4e8f-489b-96d1-76ec82fe4c38
     m_ActionName: Player/Float[/Keyboard/leftCtrl,/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1472427310}
+        m_TargetAssemblyTypeName: InputManager, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 05107d73-f9c4-440e-8c21-0ec725ad87d5
+    m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
