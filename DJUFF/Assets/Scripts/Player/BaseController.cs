@@ -10,6 +10,11 @@ public class BaseController : MonoBehaviour
 
     [SerializeField] private BodyState body;
 
+    public virtual void OnBodyStateChange(BodyState newBodyState)
+    {
+
+    }
+
     public BodyState GetCurrentState()
     {
         return pc.currentState;
@@ -23,5 +28,15 @@ public class BaseController : MonoBehaviour
     public BodyState GetBodyVariable() 
     {
         return body;
+    }
+
+    public GameObject GetBodyObject() 
+    {
+        return pc.GetBodyObject();
+    }
+
+    public GameObject GetSoulObject()
+    {
+        return pc.GetSoulObject();
     }
 }
