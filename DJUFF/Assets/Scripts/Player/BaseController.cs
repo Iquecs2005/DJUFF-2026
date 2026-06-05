@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
+    [Header("Base References")]
     [SerializeField] protected PlayerController pc;
-
     [SerializeField] private Rigidbody rb;
 
+    [Header("Base Variables")]
     [SerializeField] private BodyState body;
 
     public virtual void OnBodyStateChange(BodyState newBodyState)

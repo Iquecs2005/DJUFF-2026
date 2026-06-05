@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class SoulMovement : BaseMovement
 {
+    [Header("Soul Variables")]
     [SerializeField] private float floatSpeed;
     [SerializeField] private float floatAccelRate;
     [SerializeField] private float floatDesaccelRate;
+
+    [SerializeField] private float expulsionForce;
     
     private float floatInput;
 
@@ -20,6 +23,13 @@ public class SoulMovement : BaseMovement
     {
         GameObject body = controller.GetBodyObject();
         transform.position = body.transform.position;
+    }
+
+    public void ApplyExpulsionForce() 
+    {
+        Rigidbody rb = controller.GetRigidbody();
+        Transform cameraTransform = playerCameraController.GetCameraTransform();
+        rb.AddForce(cameraTransform.forward * expulsionForce);
     }
 
     public void SetFloatInput(float floatInput) 

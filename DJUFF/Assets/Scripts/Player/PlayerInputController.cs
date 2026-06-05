@@ -2,20 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem.XR;
 
 public class PlayerInputController : MonoBehaviour
 {
+    [Header("Events")]
     [SerializeField] private UnityEvent<Vector2> OnMoveEvent;
     [SerializeField] private UnityEvent<float> OnFloatEvent;
     [SerializeField] private UnityEvent OnAstralProjectionEvent;
-    [SerializeField] private UnityEvent OnJumpEvent;
+    [SerializeField] private UnityEvent OnJumpStartEvent;
+    [SerializeField] private UnityEvent OnJumpEndEvent;
 
     private void OnEnable()
     {
         InputManager.OnMoveEvent.AddListener(OnMoveInput);
         InputManager.OnAstralProjectionEvent.AddListener(OnAstralProjection);
         InputManager.OnFloatEvent.AddListener(OnFloat);
-        InputManager.OnJumpEvent.AddListener(OnJump);
+        InputManager.OnJumpStartEvent.AddListener(OnJumpStart);
+        InputManager.OnJumpEndEvent.AddListener(OnJumpEnd);
     }
 
     private void OnDisable()
@@ -23,7 +27,8 @@ public class PlayerInputController : MonoBehaviour
         InputManager.OnMoveEvent.RemoveListener(OnMoveInput);
         InputManager.OnAstralProjectionEvent.RemoveListener(OnAstralProjection);
         InputManager.OnFloatEvent.RemoveListener(OnFloat);
-        InputManager.OnJumpEvent.RemoveListener(OnJump);
+        InputManager.OnJumpStartEvent.RemoveListener(OnJumpStart);
+        InputManager.OnJumpEndEvent.AddListener(OnJumpEnd);
     }
 
     private void OnMoveInput(Vector2 newMoveInput)
@@ -41,8 +46,13 @@ public class PlayerInputController : MonoBehaviour
         OnFloatEvent.Invoke(floatValue);
     }
 
-    private void OnJump() 
+    private void OnJumpStart() 
     {
-        OnJumpEvent.Invoke();
+        OnJumpStartEvent.Invoke();
+    }
+
+    private void OnJumpEnd()
+    {
+        OnJumpEndEvent.Invoke();
     }
 }

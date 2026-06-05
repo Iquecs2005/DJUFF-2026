@@ -14,6 +14,7 @@ public class SoulController : BaseController
         {
             soulMovement.CenterOnBody();
             gameObject.SetActive(true);
+            soulMovement.ApplyExpulsionForce();
         }
         else 
         {

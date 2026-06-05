@@ -11,7 +11,8 @@ public class InputManager : MonoBehaviour
     public static UnityEvent<Vector2> OnMoveEvent { get; private set; } = new UnityEvent<Vector2>();
     public static UnityEvent<float> OnFloatEvent { get; private set; } = new UnityEvent<float>();
     public static UnityEvent OnAstralProjectionEvent { get; private set; } = new UnityEvent();
-    public static UnityEvent OnJumpEvent { get; private set; } = new UnityEvent();
+    public static UnityEvent OnJumpStartEvent { get; private set; } = new UnityEvent();
+    public static UnityEvent OnJumpEndEvent { get; private set; } = new UnityEvent();
 
     private void Awake()
     {
@@ -47,7 +48,11 @@ public class InputManager : MonoBehaviour
     {
         if (callbackContext.performed)
         {
-            OnJumpEvent.Invoke();
+            OnJumpStartEvent.Invoke();
+        }
+        else if (callbackContext.canceled) 
+        {
+            OnJumpEndEvent.Invoke();
         }
     }
 }

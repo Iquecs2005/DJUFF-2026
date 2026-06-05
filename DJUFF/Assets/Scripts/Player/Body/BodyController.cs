@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BodyController : BaseController
 {
+    [Header("Body References")]
     [SerializeField] private GroundCheck groundCheck;
 
     public bool IsGrounded() 

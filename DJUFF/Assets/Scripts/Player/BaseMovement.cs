@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BaseMovement : MonoBehaviour
 {
+    [Header("References")]
     [SerializeField] protected BaseController controller;
+    [SerializeField] protected PlayerCameraController playerCameraController;
 
-    [SerializeField] private Transform cameraTransform;
-
+    [Header("Base Variables")]
     [SerializeField] private float maxSpeed;
     [SerializeField] private float accelRate;
     [SerializeField] private float desaccelRate;
@@ -22,6 +23,7 @@ public class BaseMovement : MonoBehaviour
     protected void ApplyMovement()
     {
         Rigidbody rb = controller.GetRigidbody();
+        Transform cameraTransform = playerCameraController.GetCameraTransform();
 
         Vector3 movementInput = cameraTransform.forward * moveInput.y + cameraTransform.right * moveInput.x;
         movementInput.y = 0;

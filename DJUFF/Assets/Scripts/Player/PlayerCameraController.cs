@@ -14,10 +14,21 @@ public class PlayerCameraController : MonoBehaviour
         Transform newFollow;
 
         if (newBodyState == BodyState.Body)
+        {
             newFollow = bodyPOVTransform;
+            cameraController.SetNormalView();
+        }
         else
+        {
             newFollow = soulPOVTransform;
+            cameraController.SetSpiritualView();
+        }
 
         cameraController.SetCameraFollow(newFollow);
+    }
+
+    public Transform GetCameraTransform() 
+    {
+        return cameraController.GetCameraTransform();
     }
 }
