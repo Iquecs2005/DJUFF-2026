@@ -144,7 +144,7 @@
                 {
                     "name": "negative",
                     "id": "c72e1608-fe55-49bb-b1e4-1702e91f9603",
-                    "path": "<Keyboard>/leftCtrl",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

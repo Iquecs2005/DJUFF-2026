@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PlayerCameraController : MonoBehaviour
 {
-    [SerializeField] private CameraController cameraController;
-
+    [Header("Variables")]
     [SerializeField] private Transform bodyPOVTransform;
     [SerializeField] private Transform soulPOVTransform;
+
+    private CameraController cameraController;
+
+    private void Start()
+    {
+        cameraController = GameManager.GetCameraController();
+    }
 
     public void OnBodyStateChange(BodyState newBodyState) 
     {

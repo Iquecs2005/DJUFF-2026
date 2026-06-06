@@ -5,12 +5,16 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private GameObject bodyObject;
-    [SerializeField] private GameObject soulObject;
+    [Header("References")]
     [SerializeField] private BodyController bodyController;
     [SerializeField] private SoulController ghostController;
-    [SerializeField] private PlayerCameraController cameraController;
+    [SerializeField] private PlayerPossesionController playerPossesionController;
+       
+    [Header("Variables")]
+    [SerializeField] private GameObject bodyObject;
+    [SerializeField] private GameObject soulObject;
 
+    [Header("Events")]
     [SerializeField] private UnityEvent<BodyState> OnBodyStateChange;
 
     public BodyState currentState { get; private set; }
@@ -41,9 +45,9 @@ public class PlayerController : MonoBehaviour
         return soulObject;
     }
 
-    public Transform GetCameraTransform() 
+    public float GetPossetionRatio() 
     {
-        return cameraController.GetCameraTransform();
+        return playerPossesionController.PossesionRatio();
     }
 }
 
