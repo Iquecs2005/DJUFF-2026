@@ -16,7 +16,7 @@ public class BodyMovement : BaseMovement
     private void FixedUpdate()
     {
         ApplyMovement();
-        if (currentBufferTime >= 0) 
+        if (currentBufferTime > 0) 
         {
             Jump();
             currentBufferTime -= Time.deltaTime;

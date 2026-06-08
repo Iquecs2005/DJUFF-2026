@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SoulTriggerController : MonoBehaviour
 {
-    [SerializeField] private PlayerController controller;
+    [SerializeField] private UnityEvent OnSoulEnter;
+    [SerializeField] private UnityEvent OnSoulExit;
 
     private bool soulIsOut;
 
@@ -12,7 +14,7 @@ public class SoulTriggerController : MonoBehaviour
     {
         if (soulIsOut) 
         {
-            controller.SwitchState(true);
+            OnSoulEnter.Invoke();
             soulIsOut = false;
         }
     }
@@ -20,5 +22,6 @@ public class SoulTriggerController : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         soulIsOut = true;
+        OnSoulExit.Invoke();
     }
 }

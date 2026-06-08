@@ -5,17 +5,17 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] private BodyController bodyController;
-    [SerializeField] private SoulController ghostController;
-    [SerializeField] private PlayerPossesionController playerPossesionController;
-       
+    [field: Header("References")]
+    [field: SerializeField] public BodyController body { get; private set; }
+    [field: SerializeField] public SoulController soul { get; private set; }
+
     [Header("Variables")]
     [SerializeField] private GameObject bodyObject;
     [SerializeField] private GameObject soulObject;
 
-    [Header("Events")]
-    [SerializeField] private UnityEvent<BodyState> OnBodyStateChange;
+    [field: Header("Events")] 
+    [field: SerializeField] public UnityEvent<BodyState> OnBodyStateChange 
+                            { get; private set; } = new UnityEvent<BodyState>();
 
     public BodyState currentState { get; private set; }
 
@@ -43,11 +43,6 @@ public class PlayerController : MonoBehaviour
     public GameObject GetSoulObject() 
     {
         return soulObject;
-    }
-
-    public float GetPossetionRatio() 
-    {
-        return playerPossesionController.PossesionRatio();
     }
 }
 

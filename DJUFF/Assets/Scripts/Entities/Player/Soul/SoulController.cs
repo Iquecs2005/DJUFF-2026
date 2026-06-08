@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class SoulController : BaseController
 {
     [SerializeField] private SoulMovement soulMovement;
+
+    [field: Header("Events")]
+    [field: SerializeField] public UnityEvent<bool> OnSafetyChangeEvent
+    { get; private set; } = new UnityEvent<bool>();
 
     public override void OnBodyStateChange(BodyState newBodyState)
     {
