@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
     [field: Header("Events")] 
     [field: SerializeField] public UnityEvent<BodyState> OnBodyStateChange 
                             { get; private set; } = new UnityEvent<BodyState>();
+    [field: SerializeField] public UnityEvent OnBodyEvent
+                            { get; private set; } = new UnityEvent();
+    [field: SerializeField] public UnityEvent OnSoulEvent
+                            { get; private set; } = new UnityEvent();
 
     public BodyState currentState { get; private set; }
 
@@ -24,12 +28,14 @@ public class PlayerController : MonoBehaviour
         if (currentState == BodyState.Body) 
         {
             currentState = BodyState.Soul;
+            OnSoulEvent.Invoke();
         }
         else 
         {
             if (!force)
                 return;
             currentState = BodyState.Body;
+            OnBodyEvent.Invoke();
         }
 
         OnBodyStateChange.Invoke(currentState);
