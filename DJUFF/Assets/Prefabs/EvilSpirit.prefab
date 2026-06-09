@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4833596998102866196}
   - component: {fileID: 4884424443046918278}
   - component: {fileID: 2253154639805149939}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: DeathTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 192
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

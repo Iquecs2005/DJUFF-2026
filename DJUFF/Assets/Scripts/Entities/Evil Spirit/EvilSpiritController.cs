@@ -21,7 +21,7 @@ public class EvilSpiritController : MonoBehaviour
             playerController = GameManager.GetPlayerController();
 
         playerController.soul.OnSafetyChangeEvent.AddListener(SetHaunting);
-        movement.SetGoal(playerController.gameObject.transform);
+        movement.SetGoal(playerController.body.transform);
     }
 
     private void OnDisable()
