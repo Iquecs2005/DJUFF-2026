@@ -17,14 +17,12 @@ public class CameraController : MonoBehaviour
 
     private void OnEnable()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        GameManager.LockMouse();
     }
 
     private void OnDisable()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        GameManager.UnlockMouse();
     }
 
     private void OnValidate()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EvilSpiritController : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class EvilSpiritController : MonoBehaviour
     [Header("Variables")]
     [SerializeField] private GameObject holder;
     [field: SerializeField] public float possesionTime {  get; private set; }
+
+    [Header("Events")]
+    [SerializeField] private UnityEvent OnHauntingStart;
+    [SerializeField] private UnityEvent OnHauntingEnd;
 
     public bool haunting { get; private set; }
 
@@ -35,12 +40,13 @@ public class EvilSpiritController : MonoBehaviour
         {
             holder.SetActive(false);
             haunting = false;
+            OnHauntingEnd.Invoke();
         }
         else 
         {
-            movement.SetRandomPos();
             holder.SetActive(true);
             haunting = true;
+            OnHauntingStart.Invoke();
         }
     }
 }

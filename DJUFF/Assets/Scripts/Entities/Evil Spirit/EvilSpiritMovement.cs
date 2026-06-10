@@ -10,12 +10,23 @@ public class EvilSpiritMovement : MonoBehaviour
     [Header("Variables")]
     [SerializeField] private float speed;
 
+    private Vector3 startingPos;
     private Transform goal;
+
+    private void Start()
+    {
+        startingPos = transform.position;
+    }
 
     private void FixedUpdate()
     {
         if (controller.haunting)
             MoveCloser();
+    }
+
+    public void ResetPosition() 
+    {
+        transform.position = startingPos;
     }
 
     public void SetRandomPos()

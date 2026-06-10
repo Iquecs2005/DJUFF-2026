@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
                             { get; private set; } = new UnityEvent();
     [field: SerializeField] public UnityEvent OnSoulEvent
                             { get; private set; } = new UnityEvent();
+    [field: SerializeField] public UnityEvent OnDeathEvent
+                            { get; private set; } = new UnityEvent();
 
     public BodyState currentState { get; private set; }
 
@@ -39,6 +41,11 @@ public class PlayerController : MonoBehaviour
         }
 
         OnBodyStateChange.Invoke(currentState);
+    }
+
+    public void Die() 
+    {
+        OnDeathEvent.Invoke();
     }
 
     public GameObject GetBodyObject() 

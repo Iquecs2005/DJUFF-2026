@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public static PlayerController GetPlayerController() 
     {
         if (playerController == null)
-            playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+            playerController = GameObject.FindWithTag("Player")?.GetComponent<PlayerController>();
         return playerController;
     }
 
@@ -32,5 +32,27 @@ public class GameManager : MonoBehaviour
         if (cameraController == null)
             cameraController = GameObject.FindWithTag("CameraHolder").GetComponent<CameraController>();
         return cameraController;
+    }
+
+    public static void LockMouse() 
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public static void UnlockMouse() 
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public static void PauseGame() 
+    {
+        Time.timeScale = 0;
+    }
+
+    public static void UnpauseGame()
+    {
+        Time.timeScale = 1;
     }
 }
