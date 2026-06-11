@@ -1081,25 +1081,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1968178190609102597, guid: e71eedcf53fd18e4f881eed05456570c,
+    - target: {fileID: 2921794603625293796, guid: e71eedcf53fd18e4f881eed05456570c,
         type: 3}
-      propertyPath: m_VerticalAxis.m_MaxSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968178190609102597, guid: e71eedcf53fd18e4f881eed05456570c,
-        type: 3}
-      propertyPath: m_VerticalAxis.m_AccelTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968178190609102597, guid: e71eedcf53fd18e4f881eed05456570c,
-        type: 3}
-      propertyPath: m_HorizontalAxis.m_MaxSpeed
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1968178190609102597, guid: e71eedcf53fd18e4f881eed05456570c,
-        type: 3}
-      propertyPath: m_HorizontalAxis.m_AccelTime
-      value: 0.5
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2921794603625293796, guid: e71eedcf53fd18e4f881eed05456570c,
         type: 3}
@@ -1115,6 +1100,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CameraHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498835913636890163, guid: e71eedcf53fd18e4f881eed05456570c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8498835913636890163, guid: e71eedcf53fd18e4f881eed05456570c,
         type: 3}
