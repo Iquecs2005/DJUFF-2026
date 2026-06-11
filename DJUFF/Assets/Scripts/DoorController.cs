@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class DoorController : MonoBehaviour
 {
-    [SerializeField] private int sceneID;
+    [SerializeField] private string sceneName;
 
     public void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(sceneID);
+        SceneManager.LoadScene(sceneName);
     }
 }

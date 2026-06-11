@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 665210648030644404}
   - component: {fileID: 5531194778655535372}
-  - component: {fileID: 5190779277061113884}
   - component: {fileID: 244501540405758867}
   - component: {fileID: 807031163775747557}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,27 +43,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238693584114905365}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &5190779277061113884
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1238693584114905365}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.5918155, y: 4.906307, z: 1}
-  m_Center: {x: 0.045762062, y: 0.027879357, z: 0}
 --- !u!65 &244501540405758867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75,14 +53,14 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 2.5918155, y: 4.906307, z: 1}
   m_Center: {x: 0.045762062, y: 0.027879357, z: 0}
@@ -98,7 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00b1934d91df844994dc21a2e53e6d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneID: 0
+  sceneName: 
 --- !u!1 &6300202502654347688
 GameObject:
   m_ObjectHideFlags: 0
