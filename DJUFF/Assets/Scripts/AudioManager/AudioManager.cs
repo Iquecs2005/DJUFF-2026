@@ -45,8 +45,8 @@ public class AudioManager : MonoBehaviour
         float musicVolume = PlayerPrefs.GetFloat(MUSIC_KEY, 1f);
         float sfxVolume = PlayerPrefs.GetFloat(SFX_KEY, 1f);
 
-        mixer.SetFloat(AudioSlider.MIXER_MASTER, Mathf.Log10(masterVolume) * 20);
-        mixer.SetFloat(AudioSlider.MIXER_MUSIC, Mathf.Log10(musicVolume) * 20);
-        mixer.SetFloat(AudioSlider.MIXER_SFX, Mathf.Log10(sfxVolume) * 20);
+        //mixer.SetFloat(AudioSlider.MIXER_MASTER, Mathf.Log10(masterVolume) * 20);
+        //mixer.SetFloat(AudioSlider.MIXER_MUSIC, Mathf.Log10(musicVolume) * 20);
+        //mixer.SetFloat(AudioSlider.MIXER_SFX, Mathf.Log10(sfxVolume) * 20);
     }
 }
