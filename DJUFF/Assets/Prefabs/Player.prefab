@@ -937,6 +937,7 @@ GameObject:
   - component: {fileID: 5318134179647659834}
   - component: {fileID: 5595751782750102288}
   - component: {fileID: 7094446724642495119}
+  - component: {fileID: 2732753847994639509}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -1062,6 +1063,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 3196925915161827298}
+--- !u!114 &2732753847994639509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7182943469148512818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a530072a03fc7184c98bc8ef0014324a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultMusicName: BodyMusic
+  fadeInTime: 0
+  fadeOutTime: 0
+  playOnStart: 1
+  shouldFadeIn: 0
 --- !u!1 &7568509321785333748
 GameObject:
   m_ObjectHideFlags: 0
