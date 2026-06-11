@@ -2787,7 +2787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainPage: {fileID: 1516070278}
   creditsPage: {fileID: 11573277}
-  FirstLevelName: Level 1
+  FirstLevelName: Section 1
 --- !u!1 &1853285883
 GameObject:
   m_ObjectHideFlags: 0
